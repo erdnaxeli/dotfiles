@@ -24,8 +24,13 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
+#
+# The following was manually added
+#
+
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(starship init bash)"
 
 export EDITOR=vim
-export PODMAN_COMPOSE_WARNING_LOGS=false
+export HOMEBREW_NO_ENV_HINTS=1
+export PATH="$HOME/go/bin:$PATH"
